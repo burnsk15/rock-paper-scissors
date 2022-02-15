@@ -28,3 +28,26 @@ function playerSelection() {
     return selection;
 }
 
+//Function to declare the winner
+function playRound(){
+    let computer = computerPlay();
+    let player = playerSelection();
+    if (computer === player) {
+        return "It's a tie!";
+    } else if (computer === 'rock' && player === 'paper') {
+        return "You win! Paper beats rock!";
+    } else if (computer === 'paper' && player === 'rock') {
+        return "You lose. Paper beats rock!";
+    } else if (computer === 'rock' && player === 'scissors') {
+        return "You lose. Rock Beats scissors!";
+    } else if (computer === 'scissors' && player === 'rock') {
+        return "You win! Rock beats scissors!";
+    } else if (computer === 'paper' && player === 'scissors') {
+        return "You win! Scissors beat paper!";
+    } else if (computer === 'scissors' && player === 'paper') {
+        return "You lose. Scissors beat paper!";
+    } else {
+        return "Something went wrong";
+    }
+}
+
