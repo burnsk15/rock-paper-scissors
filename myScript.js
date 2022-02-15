@@ -29,10 +29,12 @@ function playerSelection() {
 }
 
 //Function to declare the winner
-function playRound(){
+function playRound() {
+    // call both the computerPlay funtion and the playerSelection function and assign to variables
     let computer = computerPlay();
     let player = playerSelection();
-    if (computer === player) {
+    // to determine the winner
+    if (computer === player) { //incase of a tie
         return "It's a tie!";
     } else if (computer === 'rock' && player === 'paper') {
         return "You win! Paper beats rock!";
@@ -47,7 +49,29 @@ function playRound(){
     } else if (computer === 'scissors' && player === 'paper') {
         return "You lose. Scissors beat paper!";
     } else {
-        return "Something went wrong";
+        return "You didn't input a correct option"; //incase user did not enter a valid answer
     }
 }
 
+// Function to play 5 games in a row and keep score
+function game() {
+    // declare the score keeping variables up here so that they do not reset every loop
+    let computerScore = 0;
+    let playerScore = 0;
+    let ties = 0;
+    for (let i=0; i<5; i++) {
+        let text = playRound();
+        // use substring to only compare the words "win!" or "lose"
+        let result = text.substring(4, 8);
+        if (result === "lose") {
+           computerScore++; // add an increment to the score variable
+        } else if (result === "win!") {
+            playerScore++;
+        } else {
+            ties++;
+        }
+        console.log(text); // print out the reuslts of the round
+    }  
+    // print out the results of all 5 rounds  
+    console.log("Computer: " + computerScore + " Player: " + playerScore + " Ties: " + ties);
+}
