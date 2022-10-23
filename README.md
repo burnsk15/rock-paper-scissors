@@ -1,20 +1,20 @@
 # rock-paper-scissors
 Practice building a JavaScript program from scratch.
 
+## Reworking Notes
+Goal was to add buttons for obtain the user input instead of using a prompt and having the user type in their choice. Added EventListeners to each button making it call the playRound() function which in turn called the updateScore() function. We also update the score on the webpage each round, and reset after 5 rounds have been played and an overall winner is determined.
 
 ### computerPlay()
 first we will write a function called computer play that will randomly return either 'Rock', 'Paper', or 'Scissors'.
 
-### playerSelection()
-function to prompt the user for and input and then converts that input into all lowe case.
-
 ### playRound()
-function to compare the playerSelection to the computerPlay to determine and return the results.
-If the user mi types or does not input "rock", "paper", or "scissors" then it will return with statement saying to input the correct answer. this should be moved into the player selcetion function so that it does not tkae up a round.
+function to compare the player election to the computerPlay to determine the results and attach them to the round result paragraph element. It will the call the updateScore() function with the results as it's parameter
 
-### game()
-funtion to continue the game for 5 rounds and while keeping overall score including ties.
+### updateScore()
+Function to update the gobals variables used to keep score for 5 rounds, and then resets the scores after those 5 rounds. It also updates the scores in the respective paragraph elements.
 
 ## Ideas for imporvement
-* add test to see if the user inputs one of the choices, and return a result to prompt again.
-* instead of converting the numbers into strings in the computerPlay function, we should convert the users input into intergers and compare those to make the code look cleaner.
+* add CSS to make the sight look better
+* use flexbox to make the flow better
+* add images for the rock, paper, and scissor buttons
+

@@ -5,9 +5,32 @@
         <meta charset="Utf=8">
         <!-- Put the link to the js file in a script tag, using the
         src attribute. -->
-        <script src="myScript.js"></script>
+        <script src="myScript.js" defer></script>
+        <!-- Put the link to the CSS file in the script tag to keep 
+        the html code as clean as possible-->
+        <link rel="stylesheet" href = "style.css">
     </head>
     <body>
-        
+        <div class = "header">
+            <h1>Rock Paper Scissors</h1>
+        </div>
+            <h3>Please choose Rock, Paper, or Scissors</h3>
+        <!-- Add buttons-->
+        <div class = "buttons">
+            <button id="rock" class="btn" type="button">Rock</button>
+            <button id="paper" class="btn" type="button">Paper</button>
+            <button id="scissors" class="btn" type="button">Scissors</button>
+        </div>
+        <div class = "results">
+            <h3>Results</h3>
+            <p id="result"></p>
+            <p id="round">Round Results: </p>
+            <p>Computer Score: </p>
+            <p id="computer">0</p>
+            <p>Player Score: </p>
+            <p id="player">0</p>
+            <p>Ties: </p>
+            <p id="tie">0</p>
+        </div>
     </body>
 </html>
